@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Pink Glow Edition</title>
+    <title>Demon Setup | Pure Header Glow</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -11,36 +11,33 @@
             background: #050505; color: #fdfdfd; text-align: center; padding: 20px; margin: 0; 
         }
         
-        /* === PEMBE YAZI & SENKRONİZE NEFES ALAN GLOW === */
-        @keyframes synchedGlow {
-            0%, 100% {
-                /* Işıklar ve parlamalar sönük */
-                text-shadow: 0 0 0px rgba(255, 105, 180, 0);
-                box-shadow: 0 0 5px rgba(255, 105, 180, 0);
-                border-color: #1a1a1a;
-            }
-            50% {
-                /* Pembe parlama en güçlü seviyede */
-                text-shadow: 0 0 20px rgba(255, 105, 180, 0.9), 0 0 40px rgba(255, 105, 180, 0.5);
-                box-shadow: 0 0 55px rgba(255, 105, 180, 0.35);
-                border-color: rgba(255, 105, 180, 0.6);
-            }
-        }
-
         .container { 
             max-width: 500px; margin: 20px auto; background: #0d0d0d; padding: 30px; 
             border-radius: 35px; border: 2px solid #222; 
-            /* Kutunun dışındaki parlama animasyonu */
-            animation: synchedGlow 4s infinite ease-in-out;
+            /* KUTUDA ARTIK ANİMASYON YOK */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0); 
         }
         
+        /* === SADECE BAŞLIK İÇİN NEFES ALAN GLOW === */
+        @keyframes headerOnlyGlow {
+            0%, 100% {
+                text-shadow: 0 0 0px rgba(255, 105, 180, 0);
+                opacity: 0.8;
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 105, 180, 0.9), 0 0 40px rgba(255, 105, 180, 0.5);
+                opacity: 1;
+            }
+        }
+
         h1 { 
             font-family: 'Dancing Script', cursive;
             margin-bottom: 5px; font-size: 38px; 
-            color: #FF69B4; /* ESKİ PEMBE RENGİNE GERİ DÖNDÜ 🩷 */
-            /* Yazının arkasındaki parlama animasyonu */
-            animation: synchedGlow 4s infinite ease-in-out;
+            color: #FF69B4; 
+            /* ANİMASYON SADECE BURADA */
+            animation: headerOnlyGlow 4s infinite ease-in-out;
         }
+        /* ========================================= */
 
         .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
         
