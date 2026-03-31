@@ -10,36 +10,54 @@
             font-family: 'Fredoka', sans-serif; 
             background: #050505; color: #fdfdfd; text-align: center; padding: 20px; margin: 0; 
         }
+        
         .container { 
             max-width: 500px; margin: 20px auto; background: #0d0d0d; padding: 30px; 
             border-radius: 35px; border: 2px solid #222; 
-            box-shadow: 0 0 35px rgba(255, 105, 180, 0.2); 
-        }
-        
-        /* --- YENİ ANİMASYONLU BAŞLIK STİLİ --- */
-        h1 { 
-            font-family: 'Dancing Script', cursive;
-            margin-bottom: 5px; font-size: 38px; /* Biraz büyüttüm, el yazısı daha net olsun */
             
-            /* Animasyon tanımları */
-            animation: glowPulse 3s infinite ease-in-out; 
-            color: #FF69B4; /* Varsayılan renk */
+            /* --- YENİ DIŞ GLOW ANİMASYONU --- */
+            animation: containerGlow 4s infinite ease-in-out;
         }
 
-        /* Renk Değiştirme ve Parlama Animasyonu */
-        @keyframes glowPulse {
+        /* Ana kutu için dış parlama animasyonu (Miyical Pulse) */
+        @keyframes containerGlow {
             0%, 100% {
-                color: #FF69B4; /* Hot Pink */
-                text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.6);
-                transform: scale(1);
+                box-shadow: 0 0 35px rgba(255, 105, 180, 0.2);
+                border-color: #222;
             }
             50% {
-                color: #FFB6C1; /* Light Pink (Daha açık/parlak pembe) */
-                text-shadow: 2px 2px 25px rgba(255, 182, 193, 0.9); /* Daha güçlü parlama */
-                transform: scale(1.02); /* Hafifçe büyüme efekti */
+                box-shadow: 0 0 60px rgba(255, 105, 180, 0.35); /* Daha güçlü parlama */
+                border-color: rgba(255, 105, 180, 0.3); /* Kenarlık da hafif parlasın */
             }
         }
         /* -------------------------------------- */
+        
+        /* --- DÜZELTİLMİŞ VE GELİŞTİRİLMİŞ BAŞLIK ANİMASYONU --- */
+        h1 { 
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 5px; font-size: 38px; 
+            
+            color: #FF69B4; /* Varsayılan renk */
+            animation: glitterGlow 2.5s infinite ease-in-out; 
+            
+            /* Gelişmiş başlangıç parlaklığı */
+            text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.7);
+        }
+
+        /* Başlık için pürüzsüz parıltı ve hareket animasyonu (Magical Glitter) */
+        @keyframes glitterGlow {
+            0%, 100% {
+                color: #FF69B4; /* Hot Pink */
+                text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.7), 0 0 15px rgba(255, 105, 180, 0.4);
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                color: #FFB6C1; /* Light Pink (Daha açık) */
+                text-shadow: 0 0 25px rgba(255, 182, 193, 1), 0 0 35px rgba(255, 182, 193, 0.7), 0 0 10px rgba(255, 182, 193, 1); /* Çok katmanlı parlama */
+                transform: scale(1.03) rotate(-0.5deg); /* Hafif büyüme ve eğilme efekti */
+            }
+        }
+        /* ---------------------------------------------------- */
 
         .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
         
