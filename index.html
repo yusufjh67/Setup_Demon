@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Pink Edition</title>
+    <title>Demon Setup | Pink RGB Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -11,53 +11,55 @@
             background: #050505; color: #fdfdfd; text-align: center; padding: 20px; margin: 0; 
         }
         
+        /* === ORTAK SENKRONİZASYON VE RGB TANIMLARI === */
+        :root {
+            /* Ana parıltı süresi */
+            --glow-duration: 3s; 
+            /* Temel RGB Pembe tonları */
+            --pink-hot: #FF69B4;    /* Canlı Pembe */
+            --pink-deep: #FF1493;   /* Derin Pembe */
+            --pink-light: #FFB6C1;  /* Açık Pembe */
+        }
+
+        /* Ortak RGB-Pink Pulse animasyonu (Senkronize) */
+        @keyframes synchedRGBPulse {
+            0%, 100% {
+                color: var(--pink-hot);
+                text-shadow: 0 0 10px rgba(255, 105, 180, 0.6), 0 0 5px rgba(255, 105, 180, 0.4);
+                box-shadow: 0 0 35px rgba(255, 105, 180, 0.2);
+                transform: scale(1);
+            }
+            33% {
+                color: var(--pink-deep); /* Daha koyu pembe */
+                text-shadow: 0 0 20px rgba(255, 20, 147, 0.8), 0 0 10px rgba(255, 20, 147, 0.5);
+                box-shadow: 0 0 50px rgba(255, 20, 147, 0.3);
+            }
+            66% {
+                color: var(--pink-light); /* En açık pembe (Parlak an) */
+                text-shadow: 0 0 30px rgba(255, 182, 193, 1), 0 0 15px rgba(255, 182, 193, 0.7);
+                box-shadow: 0 0 65px rgba(255, 182, 193, 0.4);
+                transform: scale(1.02); /* Hafif büyüme */
+            }
+        }
+        /* =========================================== */
+        
         .container { 
             max-width: 500px; margin: 20px auto; background: #0d0d0d; padding: 30px; 
             border-radius: 35px; border: 2px solid #222; 
             
-            /* --- YENİ DIŞ GLOW ANİMASYONU --- */
-            animation: containerGlow 4s infinite ease-in-out;
+            /* --- SENKRONİZASYONLU DIŞ GLOW --- */
+            animation: synchedRGBPulse var(--glow-duration) infinite ease-in-out;
+            /* Box-shadow'ı animasyona bıraktık */
         }
-
-        /* Ana kutu için dış parlama animasyonu (Miyical Pulse) */
-        @keyframes containerGlow {
-            0%, 100% {
-                box-shadow: 0 0 35px rgba(255, 105, 180, 0.2);
-                border-color: #222;
-            }
-            50% {
-                box-shadow: 0 0 60px rgba(255, 105, 180, 0.35); /* Daha güçlü parlama */
-                border-color: rgba(255, 105, 180, 0.3); /* Kenarlık da hafif parlasın */
-            }
-        }
-        /* -------------------------------------- */
         
-        /* --- DÜZELTİLMİŞ VE GELİŞTİRİLMİŞ BAŞLIK ANİMASYONU --- */
+        /* --- SENKRONİZASYONLU BAŞLIK --- */
         h1 { 
             font-family: 'Dancing Script', cursive;
             margin-bottom: 5px; font-size: 38px; 
             
-            color: #FF69B4; /* Varsayılan renk */
-            animation: glitterGlow 2.5s infinite ease-in-out; 
-            
-            /* Gelişmiş başlangıç parlaklığı */
-            text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.7);
+            /* Başlık rengini ve text-shadow'ı animasyona bıraktık */
+            animation: synchedRGBPulse var(--glow-duration) infinite ease-in-out;
         }
-
-        /* Başlık için pürüzsüz parıltı ve hareket animasyonu (Magical Glitter) */
-        @keyframes glitterGlow {
-            0%, 100% {
-                color: #FF69B4; /* Hot Pink */
-                text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.7), 0 0 15px rgba(255, 105, 180, 0.4);
-                transform: scale(1) rotate(0deg);
-            }
-            50% {
-                color: #FFB6C1; /* Light Pink (Daha açık) */
-                text-shadow: 0 0 25px rgba(255, 182, 193, 1), 0 0 35px rgba(255, 182, 193, 0.7), 0 0 10px rgba(255, 182, 193, 1); /* Çok katmanlı parlama */
-                transform: scale(1.03) rotate(-0.5deg); /* Hafif büyüme ve eğilme efekti */
-            }
-        }
-        /* ---------------------------------------------------- */
 
         .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
         
