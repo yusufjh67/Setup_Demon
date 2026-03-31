@@ -3,64 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Bubblegum Pink</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <title>Demon Setup | Pink Script</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
-            font-family: 'Fredoka', sans-serif; /* Yeni yumuşak font */
+            font-family: 'Fredoka', sans-serif; 
             background: #050505; color: #fdfdfd; text-align: center; padding: 20px; margin: 0; 
         }
         .container { 
             max-width: 500px; margin: 20px auto; background: #0d0d0d; padding: 30px; 
-            border-radius: 35px; /* Daha yuvarlak köşeler */
-            border: 2px solid #222; 
-            box-shadow: 0 0 35px rgba(255, 105, 180, 0.15); 
+            border-radius: 35px; border: 2px solid #222; 
+            box-shadow: 0 0 35px rgba(255, 105, 180, 0.2); 
         }
         
         h1 { 
-            color: #FF69B4; text-transform: uppercase; letter-spacing: 4px; 
-            margin-bottom: 5px; font-size: 28px; 
-            text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.7); 
+            font-family: 'Dancing Script', cursive; /* Başlık da el yazısı olsun */
+            color: #FF69B4; text-transform: none; letter-spacing: 2px; 
+            margin-bottom: 5px; font-size: 35px; 
+            text-shadow: 2px 2px 15px rgba(255, 105, 180, 0.8); 
         }
-        .subtitle { opacity: 0.6; font-size: 12px; margin-bottom: 30px; letter-spacing: 1px; color: #FFB6C1; }
+        .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
         
         .group-header { 
-            color: #FF69B4; font-size: 16px; text-align: left; 
+            color: #FF69B4; font-size: 18px; text-align: left; 
             margin: 30px 0 15px 5px; padding-left: 12px;
-            font-weight: 600;
+            font-weight: 600; font-family: 'Fredoka', sans-serif;
             border-left: 5px solid #FF69B4;
-            border-radius: 2px;
         }
 
         .btn { 
             display: flex; justify-content: space-between; align-items: center;
             background: #141414; color: #fff; padding: 18px 25px; 
             margin: 12px 0; text-decoration: none; 
-            border-radius: 20px; /* Daha pofuduk butonlar */
-            font-weight: 400; transition: all 0.4s ease; 
-            border: 1px solid #252525; font-size: 16px;
+            border-radius: 22px; 
+            font-family: 'Dancing Script', cursive; /* İSTEDİĞİN EL YAZISI STİLİ BURADA */
+            font-size: 20px; /* El yazısı olduğu için biraz büyüttüm */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid #252525;
         }
         
         .btn:hover { 
             background: #FF69B4; color: #fff; border-color: #FFB6C1; 
-            transform: scale(1.05); 
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+            transform: scale(1.05) rotate(-1deg); /* Hafif eğilme efekti */
+            box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
         }
 
         .btn span { 
+            font-family: 'Fredoka', sans-serif; /* Dosya türleri düz kalsın ki okunsun */
             font-size: 10px; font-weight: 600; color: #FFB6C1;
-            background: rgba(255, 105, 180, 0.1); padding: 5px 10px; border-radius: 12px; 
+            background: rgba(255, 105, 180, 0.1); padding: 5px 10px; border-radius: 10px; 
         }
         .btn:hover span { color: #fff; background: rgba(0,0,0,0.2); }
         
-        footer { margin-top: 50px; font-size: 12px; opacity: 0.4; color: #FF69B4; font-weight: 600; }
+        footer { margin-top: 50px; font-size: 14px; opacity: 0.6; color: #FF69B4; font-family: 'Dancing Script', cursive; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>DEMON SETUP</h1>
-        <div class="subtitle">✨ magical deployment hub ✨</div>
+        <h1>Demon Setup Merkezi</h1>
+        <div class="subtitle">✨ Your Magical Launcher ✨</div>
 
         <div class="group-header">Windows 🪟</div>
         <a href="LINK_BURAYA" class="btn">Bloxstrap Setup <span>EXE</span></a>
@@ -77,7 +79,7 @@
         <a href="LINK_BURAYA" class="btn">OneDrive Mobile <span>STORE</span></a>
         <a href="LINK_BURAYA" class="btn">Custom Client <span>APK</span></a>
 
-        <footer>MADE BY MIYA 🌸 2026</footer>
+        <footer>Made with love by Miya 🌸</footer>
     </div>
 
 </body>
