@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Ponpon-Led Edition</title>
+    <title>Demon Setup | Sparkle Ponpon Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -12,7 +12,7 @@
             display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
         
-        /* === NEON ÇİZGİ & KABARIK PONPON UÇ === */
+        /* === NEON ÇİZGİ & SPARKLY PONPON UÇ === */
         .neon-wrapper {
             position: relative;
             max-width: 500px;
@@ -36,29 +36,39 @@
                 transparent 100%
             );
             animation: rotateAll 4s linear infinite;
-            filter: blur(2px); /* Çizgi net ama hafif yumuşak */
+            filter: blur(2px);
         }
 
-        /* 2. KATMAN: KABARIK PONPON UÇ (Cheerleader Style) */
+        /* 2. KATMAN: KABARIK PONPON & SPARKLES */
+        /* Birden fazla radial-gradient ile etrafa saçılan yıldız/parıltı etkisi */
         .neon-wrapper::after {
             content: '';
             position: absolute;
             width: 180%; height: 180%;
-            /* Ponponun o kabarık ve dağılan etkisini veren çoklu gradyan */
-            background: radial-gradient(circle at 50% 10%, 
-                #FF1493 0%, 
-                #FF69B4 8%, 
-                rgba(255, 105, 180, 0.5) 15%, 
-                transparent 30%
-            );
-            animation: rotateAll 4s linear infinite;
-            filter: blur(12px); /* Ponponun o 'tüylü/dağınık' görüntüsünü bu veriyor */
+            background: 
+                /* Ana Ponpon Gövdesi */
+                radial-gradient(circle at 50% 10%, #FF1493 0%, #FF69B4 5%, transparent 15%),
+                /* Sparkles (Parıltılar) */
+                radial-gradient(circle at 48% 8%, #fff 0%, transparent 1%),
+                radial-gradient(circle at 52% 12%, #fff 0%, transparent 1%),
+                radial-gradient(circle at 50% 5%, #FFB6C1 0%, transparent 2%),
+                radial-gradient(circle at 45% 10%, #FFB6C1 0%, transparent 2%),
+                radial-gradient(circle at 55% 10%, #FFB6C1 0%, transparent 2%);
+            
+            animation: rotateAll 4s linear infinite, sparkleBlink 0.5s infinite alternate;
+            filter: blur(4px); /* Parıltıların seçilmesi için blur'u biraz azalttım */
             z-index: 0;
         }
 
         @keyframes rotateAll {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        /* Parıltıların yanıp sönme efekti */
+        @keyframes sparkleBlink {
+            0% { opacity: 0.7; transform: rotate(0deg) scale(1); }
+            100% { opacity: 1; transform: rotate(0deg) scale(1.1); }
         }
 
         .container { 
