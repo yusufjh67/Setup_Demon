@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Full Hub & Smooth Neon</title>
+    <title>Demon Setup | Ponpon-Led Neon Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -12,35 +12,59 @@
             display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
         
-        /* === YUMUŞAK NEON AKIŞI (SMOOTH BORDER) === */
+        /* === YUMUŞAK NEON AKIŞI (SMOOTH BORDER) & PONPON UÇ === */
         .neon-wrapper {
             position: relative;
             max-width: 500px;
             width: 100%;
-            padding: 2.5px; /* Çerçeve kalınlığı */
+            padding: 3px; /* Çerçeve kalınlığı */
             border-radius: 38px;
             overflow: hidden; 
             display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 0 15px rgba(255, 105, 180, 0.05);
         }
 
+        /* Dönen Çizgi Katmanı (Arka Plan) */
         .neon-wrapper::before {
             content: '';
             position: absolute;
             width: 180%; 
             height: 180%;
+            /* Çizginin kendisi (Yumuşak Geçişli) */
             background: conic-gradient(
                 from 0deg,
                 transparent 0%,
                 transparent 70%, 
-                rgba(255, 105, 180, 0.6) 90%, 
-                #FF69B4 100%
+                rgba(255, 105, 180, 0.4) 85%, 
+                #FF69B4 95%,
+                transparent 100%
             );
             animation: rotateLine 5s linear infinite; 
-            filter: blur(8px); 
+            filter: blur(5px); /* Çizgiyi yumuşat */
+        }
+
+        /* Dönen Ponpon Katmanı (Ön Plan Uç) */
+        .neon-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 180%; 
+            height: 180%;
+            /* Çizginin bittiği uç noktaya konan PONPON (Radial Gradient) */
+            background: radial-gradient(circle at 50% 10%, #FF1493 0%, #FF69B4 15%, transparent 35%);
+            
+            /* Çizgiyle aynı hızda ve yönde döner */
+            animation: rotatePonpon 5s linear infinite;
+            filter: blur(8px); /* Ponponu tüylü ve yumuşak göster */
+            z-index: 0; /* Çizginin önünde ama konteynerin arkasında */
+            opacity: 0.9;
         }
 
         @keyframes rotateLine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Ponpon için ayrı rotasyon (Zamanlamayı senkronize et) */
+        @keyframes rotatePonpon {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
