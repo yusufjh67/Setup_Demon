@@ -3,44 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Perfect Glow</title>
+    <title>Demon Setup | Neon Flow Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Fredoka', sans-serif; 
             background: #050505; color: #fdfdfd; text-align: center; padding: 20px; margin: 0; 
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
         
+        /* === NEON KENAR AKIŞI (BORDER FLOW) KONTEYNERI === */
+        .neon-wrapper {
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+            padding: 3px; /* Işığın kalınlığı */
+            background: rgba(255, 105, 180, 0.05);
+            border-radius: 38px;
+            overflow: hidden; /* Dışarı taşan ışığı keser */
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        /* Dönen Işık Katmanı */
+        .neon-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(transparent, transparent, transparent, #FF69B4);
+            animation: rotateLine 4s linear infinite;
+        }
+
+        @keyframes rotateLine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .container { 
-            max-width: 500px; margin: 20px auto; background: #0d0d0d; padding: 30px; 
-            border-radius: 35px; border: 1px solid #222; 
-            
-            /* Dış glow: Sabit ve hafif (%5-10 arası bir his) */
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.1); 
+            position: relative;
+            width: 100%;
+            background: #0d0d0d; 
+            padding: 30px; 
+            border-radius: 35px;
+            z-index: 1; /* İçeriği ışığın üstüne çıkarır */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
+        /* ============================================== */
         
-        /* === BAŞLIK İÇİN %5 TABANLI NEFES EFEKTİ === */
+        /* --- BAŞLIK NEFES EFEKTİ (KISTIK) --- */
         @keyframes softGlow {
-            0%, 100% {
-                /* Işık tamamen kapanmıyor, %5'lik bir parıltı kalıyor */
-                text-shadow: 0 0 5px rgba(255, 105, 180, 0.2);
-                opacity: 0.9;
-            }
-            50% {
-                /* Tepe noktası: Belirgin ama abartısız parlama */
-                text-shadow: 0 0 15px rgba(255, 105, 180, 0.6), 0 0 25px rgba(255, 105, 180, 0.2);
-                opacity: 1;
-            }
+            0%, 100% { text-shadow: 0 0 5px rgba(255, 105, 180, 0.2); opacity: 0.9; }
+            50% { text-shadow: 0 0 15px rgba(255, 105, 180, 0.6); opacity: 1; }
         }
 
         h1 { 
             font-family: 'Dancing Script', cursive;
             margin-bottom: 5px; font-size: 38px; 
             color: #FF69B4; 
-            /* Senkronize yumuşak nefes efekti */
             animation: softGlow 4s infinite ease-in-out;
         }
-        /* ========================================= */
 
         .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
         
@@ -78,27 +99,29 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Demon Setup Hub</h1>
-        <div class="subtitle">✨ Your Magical Launcher ✨</div>
+    <div class="neon-wrapper">
+        <div class="container">
+            <h1>Demon Setup Hub</h1>
+            <div class="subtitle">✨ Your Magical Launcher ✨</div>
 
-        <div class="group-header">Windows 🪟</div>
-        <a href="https://github.com/bloxstraplabs/bloxstrap/releases/download/v2.10.0/Bloxstrap-v2.10.0.exe" class="btn">Bloxstrap Setup <span>EXE</span></a>
-        <a href="https://cdn.discordapp.com/attachments/1272198964812320799/1272199026896535582/XMouseButtonControlSetup.2.20.5.exe?ex=69cc81ec&is=69cb306c&hm=023d4f8947513ffc7cf8e2122d79e70ec94682e82bf2d5e7e8a53cab2bc0e5f4&" class="btn">XMouseButtonControl Setup <span>EXE</span></a>
-        <a href="https://www.bing.com/ck/a?!&&p=362e40eff4590bcbJmltdHM9MTcyMzQyMDgwMCZpZ3VpZD=axWb22X" class="btn">Spooky View <span>EXE</span></a>
-        <a href="https://cdn.discordapp.com/attachments/1272199537573756941/1272199568314073219/tinytask.exe?ex=69cc826d&is=69cb30ed&hm=ff56662c4d1d2765cb77a4fad9342497229651f4e362d59d1689d85a411389f6&" class="btn">TinyTask Setup <span>EXE</span></a>
-        
-        <div class="group-header">Linux 🐧</div>
-        <a href="LINK_BURAYA" class="btn">Discord (Debian) <span>DEB</span></a>
-        <a href="LINK_BURAYA" class="btn">Visual Studio Code <span>TAR.GZ</span></a>
-        <a href="LINK_BURAYA" class="btn">Terminal Config <span>SH</span></a>
+            <div class="group-header">Windows 🪟</div>
+            <a href="https://github.com/bloxstraplabs/bloxstrap/releases/download/v2.10.0/Bloxstrap-v2.10.0.exe" class="btn">Bloxstrap Setup <span>EXE</span></a>
+            <a href="https://cdn.discordapp.com/attachments/1272198964812320799/1272199026896535582/XMouseButtonControlSetup.2.20.5.exe" class="btn">XMouseButtonControl Setup <span>EXE</span></a>
+            <a href="https://apps.microsoft.com/detail/9PB88ZKT0CDB" class="btn">Spooky View <span>EXE</span></a>
+            <a href="https://cdn.discordapp.com/attachments/1272199537573756941/1272199568314073219/tinytask.exe" class="btn">TinyTask Setup <span>EXE</span></a>
+            
+            <div class="group-header">Linux 🐧</div>
+            <a href="LINK_BURAYA" class="btn">Discord (Debian) <span>DEB</span></a>
+            <a href="LINK_BURAYA" class="btn">Visual Studio Code <span>TAR.GZ</span></a>
+            <a href="LINK_BURAYA" class="btn">Terminal Config <span>SH</span></a>
 
-        <div class="group-header">Android 🤖</div>
-        <a href="https://drive.google.com/file/d/121e6rYk1hF6Mda0MpbskvUB0nR5U03Aj" class="btn">Sonic 3 A.I.R<span>APK</span></a>
-        <a href="https://drive.google.com/file/d/16t5kcQNvUwD1JoMDrd5vnRwYMY_oSem3/view?usp=drivesdk" class="btn">Sonic 3 A.I.R ROM <span>APK</span></a>
-        <a href="https://drive.google.com/file/d/1Fr7Zp484_EN6a6BADrf0ZoNPqcoxqpnC/view?usp=drivesdk" class="btn">Ymusic <span>APK</span></a>
+            <div class="group-header">Android 🤖</div>
+            <a href="https://drive.google.com/file/d/121e6rYk1hF6Mda0MpbskvUB0nR5U03Aj" class="btn">Sonic 3 A.I.R<span>APK</span></a>
+            <a href="https://drive.google.com/file/d/16t5kcQNvUwD1JoMDrd5vnRwYMY_oSem3/view?usp=drivesdk" class="btn">Sonic 3 A.I.R ROM <span>APK</span></a>
+            <a href="https://drive.google.com/file/d/1Fr7Zp484_EN6a6BADrf0ZoNPqcoxqpnC/view?usp=drivesdk" class="btn">Ymusic <span>APK</span></a>
 
-        <footer>🩷 Made with Love by Miya 🩷</footer>
+            <footer>🩷 Made with Love by Miya 🩷</footer>
+        </div>
     </div>
 
 </body>
