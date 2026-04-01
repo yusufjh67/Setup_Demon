@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Setup | Smooth Neon Edition</title>
+    <title>Demon Setup | Full Hub & Smooth Neon</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -21,17 +21,14 @@
             border-radius: 38px;
             overflow: hidden; 
             display: flex; justify-content: center; align-items: center;
-            /* Hafif bir dış parlama desteği */
             box-shadow: 0 0 15px rgba(255, 105, 180, 0.05);
         }
 
-        /* Dönen Yumuşak Işık Katmanı */
         .neon-wrapper::before {
             content: '';
             position: absolute;
-            width: 180%; /* Daha geniş alan ki dönüş daha yumuşak görünsün */
+            width: 180%; 
             height: 180%;
-            /* Çizgi yerine geniş bir renk yayılımı (Smooth Transition) */
             background: conic-gradient(
                 from 0deg,
                 transparent 0%,
@@ -39,8 +36,8 @@
                 rgba(255, 105, 180, 0.6) 90%, 
                 #FF69B4 100%
             );
-            animation: rotateLine 5s linear infinite; /* Hızı biraz yavaşlattım (5sn) */
-            filter: blur(8px); /* İşte o pürüzsüzlüğü veren anahtar! */
+            animation: rotateLine 5s linear infinite; 
+            filter: blur(8px); 
         }
 
         @keyframes rotateLine {
@@ -55,12 +52,10 @@
             padding: 30px; 
             border-radius: 35px;
             z-index: 1; 
-            /* Kenarları biraz daha belirginleştiren iç gölge */
             box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
         }
-        /* ============================================== */
         
-        /* Önceki başlık animasyonu (Korumalı) */
+        /* Başlık animasyonu */
         @keyframes softGlow {
             0%, 100% { text-shadow: 0 0 5px rgba(255, 105, 180, 0.2); opacity: 0.9; }
             50% { text-shadow: 0 0 15px rgba(255, 105, 180, 0.5); opacity: 1; }
@@ -73,10 +68,36 @@
         }
 
         .subtitle { opacity: 0.7; font-size: 13px; margin-bottom: 30px; color: #FFB6C1; }
-        .group-header { color: #FF69B4; font-size: 18px; text-align: left; margin: 30px 0 15px 5px; padding-left: 12px; font-weight: 600; border-left: 5px solid #FF69B4; }
-        .btn { display: flex; justify-content: space-between; align-items: center; background: #141414; color: #fff; padding: 18px 25px; margin: 12px 0; text-decoration: none; border-radius: 22px; font-family: 'Dancing Script', cursive; font-size: 16px; transition: all 0.4s ease; border: 1px solid #252525; }
-        .btn:hover { background: #FF69B4; color: #fff; border-color: #FFB6C1; transform: scale(1.04); box-shadow: 0 0 15px rgba(255, 105, 180, 0.4); }
-        .btn span { font-family: 'Fredoka', sans-serif; font-size: 10px; font-weight: 600; color: #FFB6C1; background: rgba(255, 105, 180, 0.1); padding: 5px 10px; border-radius: 10px; }
+        
+        .group-header { 
+            color: #FF69B4; font-size: 18px; text-align: left; 
+            margin: 30px 0 15px 5px; padding-left: 12px;
+            font-weight: 600; border-left: 5px solid #FF69B4;
+        }
+
+        .btn { 
+            display: flex; justify-content: space-between; align-items: center;
+            background: #141414; color: #fff; padding: 18px 25px; 
+            margin: 12px 0; text-decoration: none; 
+            border-radius: 22px; 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 16px; 
+            transition: all 0.4s ease; 
+            border: 1px solid #252525;
+        }
+        
+        .btn:hover { 
+            background: #FF69B4; color: #fff; border-color: #FFB6C1; 
+            transform: scale(1.04); 
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.4); 
+        }
+
+        .btn span { 
+            font-family: 'Fredoka', sans-serif;
+            font-size: 10px; font-weight: 600; color: #FFB6C1;
+            background: rgba(255, 105, 180, 0.1); padding: 5px 10px; border-radius: 10px; 
+        }
+        
         footer { margin-top: 50px; font-size: 14px; opacity: 0.6; color: #FF69B4; font-family: 'Dancing Script', cursive; }
     </style>
 </head>
@@ -90,8 +111,17 @@
             <div class="group-header">Windows 🪟</div>
             <a href="https://github.com/bloxstraplabs/bloxstrap/releases/download/v2.10.0/Bloxstrap-v2.10.0.exe" class="btn">Bloxstrap Setup <span>EXE</span></a>
             <a href="https://cdn.discordapp.com/attachments/1272198964812320799/1272199026896535582/XMouseButtonControlSetup.2.20.5.exe" class="btn">XMouseButtonControl Setup <span>EXE</span></a>
+            <a href="https://apps.microsoft.com/detail/9PB88ZKT0CDB" class="btn">Spooky View <span>EXE</span></a>
+            <a href="https://cdn.discordapp.com/attachments/1272199537573756941/1272199568314073219/tinytask.exe" class="btn">TinyTask Setup <span>EXE</span></a>
             
+            <div class="group-header">Linux 🐧</div>
+            <a href="#" class="btn">Discord (Debian) <span>DEB</span></a>
+            <a href="#" class="btn">Visual Studio Code <span>TAR.GZ</span></a>
+            <a href="#" class="btn">Terminal Config <span>SH</span></a>
+
             <div class="group-header">Android 🤖</div>
+            <a href="https://drive.google.com/file/d/121e6rYk1hF6Mda0MpbskvUB0nR5U03Aj" class="btn">Sonic 3 A.I.R <span>APK</span></a>
+            <a href="https://drive.google.com/file/d/16t5kcQNvUwD1JoMDrd5vnRwYMY_oSem3/view?usp=drivesdk" class="btn">Sonic 3 A.I.R ROM <span>APK</span></a>
             <a href="https://drive.google.com/file/d/1Fr7Zp484_EN6a6BADrf0ZoNPqcoxqpnC/view?usp=drivesdk" class="btn">Ymusic <span>APK</span></a>
 
             <footer>🩷 Made with Love by Miya 🩷</footer>
